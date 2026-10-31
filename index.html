@@ -3,50 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Генератор мемов</title>
+    <title>Хэллоуинский урожай</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        
-        <div id="editorScreen" class="screen">
-            <div class="controls-panel">
-                <h1>Генератор Маомао</h1>
-                
-                <div class="input-group">
-                    <label for="awesome_thing">Что сдаём?</label>
-                    <input type="text" id="awesome_thing" placeholder="лабораторную работу">
-                </div>
+    <div class="game-container">
+        <div class="decorations" id="decorations">
+            <div class="bat bat1">🦇</div>
+            <div class="bat bat2">🦇</div>
+            <div class="ghost ghost1">👻</div>
+        </div>
 
-                <div class="input-group">
-                    <label for="crazy_idea">Безумная идея</label>
-                    <input type="text" id="crazy_idea" placeholder="трехэтажный JSON">
-                </div>
+        <button id="btnPause" class="pause-btn">⏸ Пауза</button>
 
-                <div class="input-group">
-                    <label for="terrible_truth">Как пройдет защита лабы (негатив)?</label>
-                    <input type="text" id="terrible_truth" placeholder="ужасно">
-                </div>
+        <header>
+            <h1>🎃 Жуткий урожай</h1>
+            <p id="gameMessage">Прорасти семечко до полуночи...</p>
+        </header>
 
-                <div class="input-group">
-                    <label for="easyly_way">Что сказал использовать препoд для решения?</label>
-                    <input type="text" id="easyly_way" placeholder="методичку">
-                </div>
+        <main class="plant-display">
+            <div id="plant" class="stage-0">🌰</div>
+            <div class="stage-indicator">Фаза: <span id="stageText">Семечко</span></div>
+        </main>
 
-                <button id="generateBtn" class="primary-btn">Сгенерировать мем!</button>
+        <aside id="statusPanel" class="status-panel">
+            <div class="stat">
+                <label>Влага (pH 3.5-4.5)</label>
+                <div class="bar-container"><div id="waterBar" class="bar water"></div></div>
+            </div>
+            <div class="stat">
+                <label>Светодиоды 6500K</label>
+                <div class="bar-container"><div id="lightBar" class="bar light"></div></div>
+            </div>
+            <div class="stat">
+                <label>Аэрация (Пеностекло)</label>
+                <div class="bar-container"><div id="soilBar" class="bar soil"></div></div>
+            </div>
+        </aside>
+
+        <section id="controlsPanel" class="controls">
+            <button id="btnWater" class="action-btn water-btn">💦 Полить подкисленной</button>
+            <button id="btnLight" class="action-btn light-btn">💡 Включить Ergolux 20W</button>
+            <button id="btnSoil" class="action-btn soil-btn">🪨 Добавить пеностекло</button>
+        </section>
+
+        <section id="finalScreen" class="final-screen hidden">
+            <h2 class="win-title">Вы вырастили Тыкву! 🎃</h2>
+            <button id="btnLightCandle" class="action-btn restart-btn">🕯 Зажечь свечу внутри</button>
+            <button id="btnRestartWin" class="action-btn secondary-btn hidden">Начать заново</button>
+        </section>
+
+        <div id="overlay" class="overlay hidden">
+            <h2 id="endTitle">Конец</h2>
+            <p id="endDesc"></p>
+            <button id="btnRestartFail" class="action-btn restart-btn">Попробовать снова</button>
+        </div>
+
+        <div id="pauseMenu" class="overlay hidden">
+            <h2>Пауза ⏸</h2>
+            <div class="rules">
+                <p><strong>Как играть:</strong></p>
+                <ul>
+                    <li>Держи шкалы в пределах <b>20% - 80%</b>.</li>
+                    <li>Если шкала упадет до 0% или заполнится до 100% — конец игры.</li>
+                    <li>С каждой новой стадией ресурсы расходуются быстрее!</li>
+                </ul>
+            </div>
+            <div class="pause-actions">
+                <button id="btnResume" class="action-btn light-btn">▶ Продолжить</button>
+                <button id="btnRestartPause" class="action-btn secondary-btn">🔄 Начать заново</button>
+                <button id="btnSkip" class="action-btn skip-btn">⏩ Пропустить игру</button>
             </div>
         </div>
-
-        <div id="resultScreen" class="screen hidden">
-            <main class="meme-display">
-                <canvas id="memeCanvas"></canvas>
-                <div class="actions-group">
-                    <button id="backBtn" class="secondary-btn">Назад к редактору</button>
-                    <button id="downloadBtn" class="primary-btn">Скачать мем</button>
-                </div>
-            </main>
-        </div>
-
     </div>
 
     <script src="script.js"></script>
