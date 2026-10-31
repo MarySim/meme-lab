@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&display=swap');
+
+:root {
+    --maomao-hair: #1c857a;
+    --maomao-hair-hover: #14635a;
+    --bg-color: #121212;
+    --panel-bg: #1e1e1e;
+    --input-bg: #2a2a2a;
+    --text-color: #f5f5f5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 4px;
+}
+
+.container {
+    background-color: var(--panel-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    max-width: 500px;
+    transition: max-width 0.4s ease;
+}
+
+.container.wide {
+    max-width: 800px;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.controls-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    color: var(--maomao-hair); 
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #aaaaaa;
+}
+
+input {
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #333;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 16px;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--maomao-hair);
+}
+
+.primary-btn, .secondary-btn {
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    border: none;
+    width: 100%;
+}
+
+.primary-btn {
+    background-color: var(--maomao-hair);
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.primary-btn:hover {
+    background-color: var(--maomao-hair-hover);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    border: 2px solid var(--maomao-hair);
+    color: var(--maomao-hair);
+}
+
+.secondary-btn:hover {
+    background-color: var(--maomao-hair);
+    color: #ffffff;
+}
+
+.primary-btn:active, .secondary-btn:active {
+    transform: scale(0.98);
+}
+
+.meme-display {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.actions-group {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .actions-group {
+        flex-direction: column;
+    }
+}

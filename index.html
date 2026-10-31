@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор мемов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div id="editorScreen" class="screen">
+            <div class="controls-panel">
+                <h1>Генератор Маомао</h1>
+                
+                <div class="input-group">
+                    <label for="awesome_thing">Что сдаём?</label>
+                    <input type="text" id="awesome_thing" placeholder="лабораторную работу">
+                </div>
+
+                <div class="input-group">
+                    <label for="crazy_idea">Безумная идея</label>
+                    <input type="text" id="crazy_idea" placeholder="трехэтажный JSON">
+                </div>
+
+                <div class="input-group">
+                    <label for="terrible_truth">Как пройдет защита лабы (негатив)?</label>
+                    <input type="text" id="terrible_truth" placeholder="ужасно">
+                </div>
+
+                <div class="input-group">
+                    <label for="easyly_way">Что сказал использовать препoд для решения?</label>
+                    <input type="text" id="easyly_way" placeholder="методичку">
+                </div>
+
+                <button id="generateBtn" class="primary-btn">Сгенерировать мем!</button>
+            </div>
+        </div>
+
+        <div id="resultScreen" class="screen hidden">
+            <main class="meme-display">
+                <canvas id="memeCanvas"></canvas>
+                <div class="actions-group">
+                    <button id="backBtn" class="secondary-btn">Назад к редактору</button>
+                    <button id="downloadBtn" class="primary-btn">Скачать мем</button>
+                </div>
+            </main>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
